@@ -9,7 +9,6 @@ For the same reason, base detectors are taken out-of-the-box, with no tuning wha
 
 ### Results
 
-  
 | model | average recall |
 | --- | --- |
 | this project | 30.81% |
@@ -21,12 +20,11 @@ For the same reason, base detectors are taken out-of-the-box, with no tuning wha
 | AutoEncoder (Neural Net)|  24.15% |
 | Perfect Selection | 39.75% |
 
-
 This table reports the average recall-to-5% over 30 datasets, i.e. the number of outliers found in the 5% top ranked rows, out of the number that should be found. It has been prefered over [precision@n](http://www.dbs.ifi.lmu.de/research/outlier-evaluation/DAMI/) as it is more stable for datasets with few outliers, especially considering that base detectors are not that accurate. More conventional evaluation metrics can be found in the source code.
 
 The default strategy is to pick the detector with the largest predicted recall. To do so, we train separately one regressor for each detector, using only features that matter for the detector at hand. 
 
-<div align="right">
+<div align="center">
 <img src="https://github.com/rom1mouret/assortment/blob/master/iforest_prediction.png">
 <img src="https://github.com/rom1mouret/assortment/blob/master/autoencoder_prediction.png">
 </div>
