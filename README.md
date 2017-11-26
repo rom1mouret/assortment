@@ -1,11 +1,12 @@
+# Model Selection For Outlier Detection
+
 ### Motivation And Approach
 
-It is notoriously difficult to ensemble arbitrary outlier detectors, e.g. Isolation Forest and ABOD. A common approach is to harmonize anomaly scores and to combine them with a function such as PROD, AVG or MAX. In my experience, however, underperforming models drag other models down and,  as a result, the ensemble disappoints, with performances landing somewhere near the average between its constituents.
+It is notoriously difficult to ensemble arbitrary outlier detectors, e.g. Isolation Forest and ABOD. A common approach is to harmonize anomaly scores and to combine them with a function such as PROD, AVG or MAX. In my experience, however, underperforming models drag other models down and, as a result, the ensemble disappoints, with overall performance landing somewhere near the average between its constituents.
 
-This project follows another popular approach, known as gating. The problem is solved by learning to pick the best detector, based on the score distributions and the nature of the dataset.
+This project follows another popular approach that Wikipedia calls [gating](https://en.wikipedia.org/wiki/Ensemble_learning#Bucket_of_models). The problem is solved by learning to pick the best detector, based on the score distributions and various metrics that aim to capture the nature of the dataset.
 
-Since the purpose of this experiment is to demonstrate the capability of our model selection method, little attention has been paid to the performance of the base detectors. In fact, both KNN and ABOD implementations are simplifications of their original counterpart. They rely heavily on random sampling to speed up the scoring.
-For the same reason, base detectors are taken out-of-the-box, with no tuning whatsoever. 
+Since the purpose of this experiment is to demonstrate the capability of our model selection, little attention has been paid to the performance of the base detectors. They are taken out-of-the-box, with no tuning whatsoever. On a similar note, both KNN and ABOD implementations are simplifications of their original counterpart, as they heavily rely upon random sampling to speed up score calculations.
 
 ### Results
 
